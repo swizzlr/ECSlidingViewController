@@ -573,6 +573,7 @@
 - (void)animateOperation:(ECSlidingViewControllerOperation)operation {
     if (![self operationIsValid:operation]){
         _isInteractive = NO;
+        if (operation == ECSlidingViewControllerOperationNone) self.animationComplete();
         return;
     }
     if (self.transitionInProgress) return;
